@@ -1000,7 +1000,43 @@ footer {
     }
 
     .top-navigation {
-        display: none;
+    display: flex;
+
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 10px 5vw;
+
+    gap: 18px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background: rgba(24, 60, 50, .96);
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.top-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.top-navigation a {
+    flex: 0 0 auto;
+}
+
+.top-navigation small {
+    font-size: 8px;
+}
+
+.nav-line {
+    width: 32px;
+}
     }
 
     .header-button {
