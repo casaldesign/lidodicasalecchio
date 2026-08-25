@@ -10,10 +10,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   VARIABILI
+===================================================== */
 
 :root {
     --green: #183c32;
@@ -23,8 +26,13 @@
     --orange: #d98a4b;
     --dark: #17201d;
     --grey: #68716c;
-    --white: #fff;
+    --white: #ffffff;
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -34,12 +42,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
     font-family: "DM Sans", sans-serif;
     background: var(--cream);
     color: var(--dark);
+    overflow-x: hidden;
 }
 
 img {
@@ -54,14 +64,15 @@ a {
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     z-index: 100;
 
@@ -73,21 +84,26 @@ header {
 
     color: white;
 
-    transition: .3s ease;
+    transition:
+        background .3s ease,
+        padding .3s ease;
 }
 
 header.scrolled {
-    background: rgba(24,60,50,.96);
+    background: rgba(24, 60, 50, .97);
     padding: 17px 6vw;
 }
 
 .logo {
     font-family: "Playfair Display", serif;
     font-size: 27px;
+    line-height: 1;
 }
 
 .logo span {
     display: block;
+
+    margin-top: 5px;
 
     font-family: "DM Sans", sans-serif;
 
@@ -97,9 +113,9 @@ header.scrolled {
 }
 
 
-/* =========================
+/* =====================================================
    NAVIGAZIONE A LINEE
-========================= */
+===================================================== */
 
 .top-navigation {
     display: flex;
@@ -126,8 +142,6 @@ header.scrolled {
 }
 
 .top-navigation small {
-    font-family: "DM Sans", sans-serif;
-
     font-size: 8px;
     font-weight: 600;
 
@@ -151,7 +165,6 @@ header.scrolled {
 
 .top-navigation a:hover .nav-line {
     width: 52px;
-
     background: var(--orange);
 }
 
@@ -159,10 +172,13 @@ header.scrolled {
     padding: 11px 18px;
 
     border: 1px solid rgba(255,255,255,.5);
-
     border-radius: 30px;
 
     font-size: 12px;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
 }
 
 .header-button:hover {
@@ -171,12 +187,12 @@ header.scrolled {
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
     align-items: flex-end;
@@ -187,13 +203,14 @@ header.scrolled {
 
     background:
         linear-gradient(
-            rgba(0,0,0,.1),
+            rgba(0,0,0,.10),
             rgba(0,0,0,.72)
         ),
         url("hero.jpg") center/cover no-repeat;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 1000px;
 }
 
@@ -227,7 +244,6 @@ header.scrolled {
     color: rgba(255,255,255,.85);
 
     font-size: 16px;
-
     line-height: 1.7;
 }
 
@@ -251,6 +267,15 @@ header.scrolled {
 
     font-size: 13px;
     font-weight: 600;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
 }
 
 .button-primary {
@@ -258,21 +283,31 @@ header.scrolled {
     color: white;
 }
 
+.button-primary:hover {
+    background: #c8793d;
+}
+
 .button-secondary {
     border: 1px solid rgba(255,255,255,.5);
     color: white;
 }
 
+.button-secondary:hover {
+    background: white;
+    color: var(--green);
+}
 
-/* =========================
-   GENERALE
-========================= */
+
+/* =====================================================
+   SEZIONI GENERALI
+===================================================== */
 
 section {
     padding: 120px 6vw;
 }
 
 .container {
+    width: 100%;
     max-width: 1150px;
     margin: auto;
 }
@@ -302,9 +337,9 @@ h2 {
 }
 
 
-/* =========================
-   INTRO
-========================= */
+/* =====================================================
+   IL LIDO
+===================================================== */
 
 .intro {
     background: var(--cream);
@@ -325,9 +360,8 @@ h2 {
 
     color: var(--grey);
 
-    line-height: 1.8;
-
     font-size: 15px;
+    line-height: 1.8;
 }
 
 .intro-image {
@@ -339,13 +373,12 @@ h2 {
 }
 
 
-/* =========================
+/* =====================================================
    SERVIZI
-========================= */
+===================================================== */
 
 .services {
     background: var(--green);
-
     color: white;
 }
 
@@ -360,6 +393,7 @@ h2 {
 
     color: rgba(255,255,255,.65);
 
+    font-size: 15px;
     line-height: 1.8;
 }
 
@@ -401,14 +435,13 @@ h2 {
     color: rgba(255,255,255,.65);
 
     font-size: 13px;
-
     line-height: 1.7;
 }
 
 
-/* =========================
+/* =====================================================
    CHIOSCO
-========================= */
+===================================================== */
 
 .chiosco {
     background: var(--sand);
@@ -437,6 +470,7 @@ h2 {
 
     color: var(--grey);
 
+    font-size: 15px;
     line-height: 1.8;
 }
 
@@ -467,9 +501,9 @@ h2 {
 }
 
 
-/* =========================
+/* =====================================================
    ATTIVITÀ
-========================= */
+===================================================== */
 
 .activities {
     background: white;
@@ -489,6 +523,7 @@ h2 {
 
     color: var(--grey);
 
+    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -538,14 +573,13 @@ h2 {
 
 .activity-arrow {
     color: var(--orange);
-
     font-size: 22px;
 }
 
 
-/* =========================
+/* =====================================================
    GALLERIA
-========================= */
+===================================================== */
 
 .gallery {
     background: var(--cream);
@@ -565,6 +599,7 @@ h2 {
 
     color: var(--grey);
 
+    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -602,9 +637,9 @@ h2 {
 }
 
 
-/* =========================
+/* =====================================================
    STORIA
-========================= */
+===================================================== */
 
 .story {
     background: var(--sand);
@@ -633,6 +668,7 @@ h2 {
 
     color: var(--grey);
 
+    font-size: 15px;
     line-height: 1.85;
 }
 
@@ -648,12 +684,13 @@ h2 {
     font-family: "Playfair Display", serif;
 
     font-size: 28px;
+    line-height: 1.3;
 }
 
 
-/* =========================
+/* =====================================================
    DOVE SIAMO
-========================= */
+===================================================== */
 
 .location {
     background: white;
@@ -673,6 +710,8 @@ h2 {
     width: 100%;
     height: 500px;
 
+    display: block;
+
     border: 0;
 }
 
@@ -690,6 +729,8 @@ h2 {
     font-size: 42px;
 
     font-weight: 500;
+
+    line-height: 1.05;
 }
 
 .location-text p {
@@ -697,6 +738,7 @@ h2 {
 
     color: var(--grey);
 
+    font-size: 15px;
     line-height: 1.8;
 }
 
@@ -727,13 +769,12 @@ h2 {
 }
 
 
-/* =========================
+/* =====================================================
    CONTATTI
-========================= */
+===================================================== */
 
 .contact {
     background: var(--orange);
-
     color: white;
 }
 
@@ -758,6 +799,7 @@ h2 {
 
     color: rgba(255,255,255,.8);
 
+    font-size: 15px;
     line-height: 1.8;
 }
 
@@ -769,11 +811,15 @@ h2 {
 }
 
 .contact-button {
+    display: block;
+
     padding: 20px 25px;
 
     border: 1px solid rgba(255,255,255,.4);
 
-    transition: .2s;
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 .contact-button:hover {
@@ -791,14 +837,13 @@ h2 {
 
 .contact-button span {
     font-size: 12px;
-
     opacity: .75;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
     padding: 55px 6vw 25px;
@@ -822,7 +867,6 @@ footer {
 
 .footer-logo {
     font-family: "Playfair Display", serif;
-
     font-size: 38px;
 }
 
@@ -834,7 +878,6 @@ footer {
     color: rgba(255,255,255,.5);
 
     font-size: 13px;
-
     line-height: 1.7;
 }
 
@@ -880,66 +923,493 @@ footer {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media(max-width:850px) {
+@media (max-width: 1000px) {
+
+    header {
+        padding: 20px 5vw;
+    }
+
+    header.scrolled {
+        padding: 15px 5vw;
+    }
+
+    .top-navigation {
+        gap: 11px;
+    }
+
+    .top-navigation small {
+        font-size: 7px;
+    }
+
+    .nav-line {
+        width: 30px;
+    }
+
+    .top-navigation a:hover .nav-line {
+        width: 40px;
+    }
+
+    .intro-grid,
+    .chiosco-grid {
+        gap: 50px;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .gallery-grid {
+        grid-auto-rows: 200px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    header {
+        min-height: 70px;
+
+        padding: 15px 5vw;
+    }
+
+    header.scrolled {
+        padding: 13px 5vw;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .logo span {
+        margin-top: 4px;
+
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
 
     .top-navigation {
         display: none;
     }
 
-    .intro-grid,
-    .chiosco-grid,
-    .story-grid,
-    .location-grid,
-    .contact-grid {
+    .header-button {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 0 5vw 55px;
+
+        background-position: center center;
+    }
+
+    .hero-small {
+        margin-bottom: 14px;
+
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 16vw, 78px);
+
+        line-height: .91;
+
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        max-width: 500px;
+
+        margin-top: 22px;
+
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        margin-top: 25px;
+
+        gap: 10px;
+    }
+
+    .hero-buttons .button {
+        flex: 1;
+
+        min-height: 50px;
+    }
+
+
+    /* SEZIONI */
+
+    section {
+        padding: 78px 5vw;
+    }
+
+    .label {
+        margin-bottom: 13px;
+
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    h2 {
+        font-size: clamp(40px, 11vw, 58px);
+
+        line-height: .98;
+    }
+
+
+    /* IL LIDO */
+
+    .intro-grid {
         grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
+    .intro-text p {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .intro-image {
+        height: 65vw;
+
+        min-height: 300px;
+        max-height: 450px;
+    }
+
+
+    /* SERVIZI */
+
+    .services-intro {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .service-grid {
         grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 38px;
     }
 
-    .intro-image,
+    .service-card {
+        min-height: 0;
+
+        padding: 22px;
+    }
+
+    .service-card img {
+        height: 200px;
+
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 27px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    /* CHIOSCO */
+
+    .chiosco-grid {
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
     .chiosco-image {
-        height: 480px;
+        height: 65vw;
+
+        min-height: 300px;
+        max-height: 450px;
+
+        order: 1;
+    }
+
+    .chiosco-text {
+        order: 2;
+    }
+
+    .chiosco-text p {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .info-list {
+        margin-top: 28px;
+    }
+
+    .info {
+        padding: 15px 0;
+    }
+
+
+    /* ATTIVITÀ */
+
+    .activities-header {
+        display: block;
+    }
+
+    .activities-header p {
+        margin-top: 22px;
+
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .activity-list {
+        margin-top: 35px;
+    }
+
+    .activity {
+        grid-template-columns: 35px 1fr;
+
+        gap: 10px;
+
+        padding: 21px 0;
+    }
+
+    .activity-number {
+        font-size: 10px;
+    }
+
+    .activity h3 {
+        font-size: 24px;
+        line-height: 1.1;
+    }
+
+    .activity p {
+        margin-top: 6px;
+
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .activity-arrow {
+        display: none;
+    }
+
+
+    /* GALLERIA */
+
+    .gallery-header {
+        display: block;
+
+        margin-bottom: 32px;
+    }
+
+    .gallery-header p {
+        margin-top: 20px;
+
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 180px;
+
+        gap: 7px;
     }
 
-    .large,
-    .wide {
+    .gallery-item.large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-item.wide {
         grid-column: span 2;
     }
 
-    .activities-header,
-    .gallery-header {
-        align-items: flex-start;
 
-        flex-direction: column;
+    /* STORIA */
+
+    .story-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .story-year {
+        font-size: clamp(75px, 20vw, 110px);
+    }
+
+    .story-text p {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .quote {
+        margin-top: 30px;
+
+        padding-left: 17px;
+
+        font-size: 23px;
+    }
+
+
+    /* DOVE SIAMO */
+
+    .location-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-top: 35px;
+    }
+
+    .map iframe {
+        height: 350px;
+    }
+
+    .location-text h3 {
+        font-size: 38px;
+    }
+
+    .location-text p {
+        margin-top: 16px;
+
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .location-info {
+        margin-top: 28px;
+    }
+
+    .location-row {
+        padding: 15px 0;
+    }
+
+    .location-text .button {
+        width: 100%;
+    }
+
+
+    /* CONTATTI */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .contact p {
+        margin-top: 18px;
+
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .contact-buttons {
+        width: 100%;
+    }
+
+    .contact-button {
+        min-height: 65px;
+
+        padding: 18px 20px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 55px 5vw 22px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+
+        gap: 40px 25px;
+    }
+
+    .footer-logo {
+        font-size: 34px;
+    }
+
+    .footer-description {
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    .footer-links {
+        font-size: 12px;
+    }
+
+    .copyright {
+        margin-top: 40px;
     }
 }
 
-@media(max-width:550px) {
 
-    section {
-        padding: 90px 6vw;
+/* =====================================================
+   TELEFONI
+===================================================== */
+
+@media (max-width: 550px) {
+
+    header {
+        padding: 14px 5vw;
     }
 
+    .logo {
+        font-size: 21px;
+    }
+
+    .header-button {
+        padding: 9px 13px;
+
+        font-size: 10px;
+    }
+
+
     .hero {
-        padding-bottom: 60px;
+        padding-bottom: 48px;
     }
 
     .hero h1 {
-        font-size: 58px;
+        font-size: clamp(48px, 15vw, 65px);
+    }
+
+    .hero p {
+        font-size: 13px;
     }
 
     .hero-buttons {
@@ -948,40 +1418,88 @@ footer {
 
     .hero-buttons .button {
         width: 100%;
+
+        flex: none;
     }
+
+
+    section {
+        padding: 70px 5vw;
+    }
+
 
     .intro-image,
     .chiosco-image {
-        height: 400px;
+        height: 78vw;
+
+        min-height: 280px;
     }
+
+
+    .service-card img {
+        height: 180px;
+    }
+
 
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
-        grid-auto-rows: 300px;
+        grid-auto-rows: 150px;
     }
 
-    .large,
-    .wide {
-        grid-column: span 1;
+
+    .map iframe {
+        height: 300px;
     }
 
-    .activity {
-        grid-template-columns: 40px 1fr;
+
+    .location-text h3 {
+        font-size: 35px;
     }
 
-    .activity-arrow {
-        display: none;
-    }
-
-    .story-year {
-        font-size: 85px;
-    }
 
     .footer-grid {
         grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+}
+
+
+/* =====================================================
+   TELEFONI MOLTO PICCOLI
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 19px;
     }
 
+    .logo span {
+        font-size: 6px;
+        letter-spacing: 1.5px;
+    }
+
+    .header-button {
+        padding: 8px 11px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .gallery-grid {
+        grid-auto-rows: 125px;
+    }
+
+    .service-card img {
+        height: 155px;
+    }
 }
 
 </style>
@@ -990,6 +1508,10 @@ footer {
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header id="header">
 
@@ -1044,7 +1566,9 @@ footer {
 <main>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero" id="home">
 
@@ -1082,7 +1606,9 @@ footer {
 </section>
 
 
-<!-- IL LIDO -->
+<!-- =====================================================
+     IL LIDO
+===================================================== -->
 
 <section class="intro" id="lido">
 
@@ -1125,6 +1651,7 @@ footer {
             <img
                 src="lido-spiaggia.jpg"
                 alt="Spiaggia del Lido di Casalecchio di Reno"
+                loading="lazy"
             >
 
         </div>
@@ -1134,7 +1661,9 @@ footer {
 </section>
 
 
-<!-- SERVIZI -->
+<!-- =====================================================
+     SERVIZI
+===================================================== -->
 
 <section class="services" id="servizi">
 
@@ -1228,7 +1757,9 @@ footer {
 </section>
 
 
-<!-- CHIOSCO -->
+<!-- =====================================================
+     CHIOSCO
+===================================================== -->
 
 <section class="chiosco" id="chiosco">
 
@@ -1300,7 +1831,9 @@ footer {
 </section>
 
 
-<!-- ATTIVITÀ -->
+<!-- =====================================================
+     ATTIVITÀ
+===================================================== -->
 
 <section class="activities" id="attivita">
 
@@ -1341,15 +1874,8 @@ footer {
                 </div>
 
                 <div>
-
-                    <h3>
-                        Beach Volley
-                    </h3>
-
-                    <p>
-                        Sport e divertimento sulla sabbia.
-                    </p>
-
+                    <h3>Beach Volley</h3>
+                    <p>Sport e divertimento sulla sabbia.</p>
                 </div>
 
                 <div class="activity-arrow">
@@ -1366,15 +1892,8 @@ footer {
                 </div>
 
                 <div>
-
-                    <h3>
-                        Yoga
-                    </h3>
-
-                    <p>
-                        Attività all'aperto immerse nel verde.
-                    </p>
-
+                    <h3>Yoga</h3>
+                    <p>Attività all'aperto immerse nel verde.</p>
                 </div>
 
                 <div class="activity-arrow">
@@ -1391,15 +1910,8 @@ footer {
                 </div>
 
                 <div>
-
-                    <h3>
-                        Fitness
-                    </h3>
-
-                    <p>
-                        Movimento e allenamento all'aperto.
-                    </p>
-
+                    <h3>Fitness</h3>
+                    <p>Movimento e allenamento all'aperto.</p>
                 </div>
 
                 <div class="activity-arrow">
@@ -1416,15 +1928,8 @@ footer {
                 </div>
 
                 <div>
-
-                    <h3>
-                        Relax
-                    </h3>
-
-                    <p>
-                        Prato, ombra, amache e tempo libero.
-                    </p>
-
+                    <h3>Relax</h3>
+                    <p>Prato, ombra, amache e tempo libero.</p>
                 </div>
 
                 <div class="activity-arrow">
@@ -1441,15 +1946,8 @@ footer {
                 </div>
 
                 <div>
-
-                    <h3>
-                        Eventi
-                    </h3>
-
-                    <p>
-                        Musica, serate e appuntamenti speciali.
-                    </p>
-
+                    <h3>Eventi</h3>
+                    <p>Musica, serate e appuntamenti speciali.</p>
                 </div>
 
                 <div class="activity-arrow">
@@ -1466,7 +1964,9 @@ footer {
 </section>
 
 
-<!-- GALLERIA -->
+<!-- =====================================================
+     GALLERIA
+===================================================== -->
 
 <section class="gallery" id="galleria">
 
@@ -1592,7 +2092,9 @@ footer {
 </section>
 
 
-<!-- STORIA -->
+<!-- =====================================================
+     STORIA
+===================================================== -->
 
 <section class="story">
 
@@ -1644,7 +2146,9 @@ footer {
 </section>
 
 
-<!-- DOVE SIAMO -->
+<!-- =====================================================
+     DOVE SIAMO
+===================================================== -->
 
 <section class="location" id="dove">
 
@@ -1660,6 +2164,7 @@ footer {
 
 
         <div class="location-grid">
+
 
             <div class="map">
 
@@ -1752,7 +2257,9 @@ footer {
 </section>
 
 
-<!-- CONTATTI -->
+<!-- =====================================================
+     CONTATTI
+===================================================== -->
 
 <section class="contact" id="contatti">
 
@@ -1837,7 +2344,9 @@ footer {
 </main>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1867,25 +2376,11 @@ footer {
 
             <div class="footer-links">
 
-                <a href="#lido">
-                    Il Lido
-                </a>
-
-                <a href="#servizi">
-                    Servizi
-                </a>
-
-                <a href="#attivita">
-                    Attività
-                </a>
-
-                <a href="#galleria">
-                    Galleria
-                </a>
-
-                <a href="#dove">
-                    Dove siamo
-                </a>
+                <a href="#lido">Il Lido</a>
+                <a href="#servizi">Servizi</a>
+                <a href="#attivita">Attività</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#dove">Dove siamo</a>
 
             </div>
 
@@ -1931,11 +2426,15 @@ footer {
 </footer>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
 const header = document.getElementById("header");
 
-window.addEventListener("scroll", function() {
+function updateHeader() {
 
     if (window.scrollY > 40) {
         header.classList.add("scrolled");
@@ -1943,7 +2442,13 @@ window.addEventListener("scroll", function() {
         header.classList.remove("scrolled");
     }
 
+}
+
+window.addEventListener("scroll", updateHeader, {
+    passive: true
 });
+
+updateHeader();
 
 </script>
 
