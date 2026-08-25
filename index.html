@@ -4,27 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Chiosco Lido Casalecchio di Reno — natura, sport, spiaggia, food & drink sulle rive del Reno.">
+<meta name="description" content="Lido di Casalecchio di Reno — spiaggia, natura, sport, eventi e chiosco sulle rive del Reno.">
 
-<title>Chiosco Lido — Casalecchio di Reno</title>
+<title>Lido di Casalecchio di Reno</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root {
-    --forest: #173d32;
-    --forest-dark: #102c25;
-    --cream: #f4f0e7;
-    --sand: #e8dcc7;
-    --white: #ffffff;
-    --black: #171b19;
-    --muted: #68716c;
-    --accent: #d98b48;
-    --line: rgba(23,61,50,.15);
+    --green: #183c32;
+    --green-light: #285448;
+    --cream: #f5f1e8;
+    --sand: #e8ddca;
+    --orange: #d98a4b;
+    --dark: #17201d;
+    --grey: #68716c;
+    --white: #fff;
 }
 
 * {
@@ -40,8 +39,7 @@ html {
 body {
     font-family: "DM Sans", sans-serif;
     background: var(--cream);
-    color: var(--black);
-    overflow-x: hidden;
+    color: var(--dark);
 }
 
 img {
@@ -51,101 +49,81 @@ img {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 
 /* =========================
-   NAVBAR
+   HEADER
 ========================= */
 
-.nav {
+header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
-
-    height: 82px;
+    width: 100%;
+    z-index: 100;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
-    padding: 0 5vw;
+    padding: 24px 6vw;
 
     color: white;
 
-    transition: all .3s ease;
+    transition: .3s ease;
 }
 
-.nav.scrolled {
-    height: 68px;
-
-    background: rgba(16,44,37,.95);
-
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 10px 40px rgba(0,0,0,.12);
+header.scrolled {
+    background: rgba(24,60,50,.96);
+    padding: 17px 6vw;
 }
 
-.brand {
+.logo {
     font-family: "Playfair Display", serif;
     font-size: 27px;
-    line-height: .9;
-    font-weight: 600;
 }
 
-.brand small {
+.logo span {
     display: block;
-
-    margin-top: 7px;
 
     font-family: "DM Sans", sans-serif;
 
     font-size: 8px;
-    font-weight: 600;
-
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
-.nav-links {
+nav {
     display: flex;
-    align-items: center;
-    gap: 34px;
-
-    list-style: none;
+    gap: 30px;
 
     font-size: 13px;
-    font-weight: 500;
 }
 
-.nav-links a {
-    opacity: .85;
-    transition: opacity .2s ease;
+nav a {
+    opacity: .9;
 }
 
-.nav-links a:hover {
+nav a:hover {
     opacity: 1;
 }
 
-.nav-cta {
-    padding: 11px 19px;
+.header-button {
+    padding: 11px 18px;
 
-    border: 1px solid rgba(255,255,255,.45);
+    border: 1px solid rgba(255,255,255,.5);
 
     border-radius: 30px;
 
     font-size: 12px;
-
-    transition: all .2s ease;
 }
 
-.nav-cta:hover {
+.header-button:hover {
     background: white;
-    color: var(--forest);
+    color: var(--green);
 }
 
 
@@ -154,43 +132,29 @@ a {
 ========================= */
 
 .hero {
-    min-height: 100svh;
-
-    position: relative;
+    min-height: 100vh;
 
     display: flex;
     align-items: flex-end;
 
-    overflow: hidden;
+    padding: 0 6vw 90px;
+
+    color: white;
 
     background:
         linear-gradient(
-            180deg,
-            rgba(8,25,21,.20) 0%,
-            rgba(8,25,21,.05) 35%,
-            rgba(8,25,21,.88) 100%
+            rgba(0,0,0,.1),
+            rgba(0,0,0,.72)
         ),
-        url("hero.jpg")
-        center center / cover no-repeat;
+        url("hero.jpg") center/cover no-repeat;
 }
 
 .hero-content {
-    width: 100%;
-    max-width: 1400px;
-
-    margin: 0 auto;
-
-    padding: 160px 5vw 90px;
+    max-width: 1000px;
 }
 
-.eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    margin-bottom: 20px;
-
-    color: rgba(255,255,255,.85);
+.hero-small {
+    margin-bottom: 18px;
 
     font-size: 11px;
     font-weight: 600;
@@ -199,56 +163,35 @@ a {
     text-transform: uppercase;
 }
 
-.eyebrow::before {
-    content: "";
-
-    width: 35px;
-    height: 1px;
-
-    background: var(--accent);
-}
-
 .hero h1 {
-    max-width: 950px;
-
-    color: white;
-
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px,9vw,128px);
+    font-size: clamp(60px, 9vw, 120px);
 
-    line-height: .88;
+    line-height: .9;
 
     font-weight: 500;
 
     letter-spacing: -3px;
 }
 
-.hero-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+.hero p {
+    max-width: 560px;
 
-    gap: 40px;
+    margin-top: 28px;
 
-    margin-top: 35px;
-}
-
-.hero-description {
-    max-width: 510px;
-
-    color: rgba(255,255,255,.82);
+    color: rgba(255,255,255,.85);
 
     font-size: 16px;
 
     line-height: 1.7;
 }
 
-.hero-actions {
+.hero-buttons {
     display: flex;
     gap: 12px;
 
-    flex-shrink: 0;
+    margin-top: 30px;
 }
 
 .button {
@@ -258,69 +201,60 @@ a {
 
     min-height: 48px;
 
-    padding: 0 22px;
+    padding: 0 23px;
 
     border-radius: 30px;
 
     font-size: 13px;
     font-weight: 600;
-
-    transition: transform .2s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
 }
 
 .button-primary {
+    background: var(--orange);
     color: white;
-    background: var(--accent);
 }
 
 .button-secondary {
+    border: 1px solid rgba(255,255,255,.5);
     color: white;
-
-    border: 1px solid rgba(255,255,255,.35);
-
-    background: rgba(255,255,255,.08);
-
-    backdrop-filter: blur(10px);
 }
 
 
 /* =========================
-   SEZIONI
+   GENERALE
 ========================= */
 
-.section {
-    max-width: 1250px;
+section {
+    padding: 120px 6vw;
+}
+
+.container {
+    max-width: 1150px;
     margin: auto;
 }
 
 .label {
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
-    color: var(--accent);
+    color: var(--orange);
 
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 10px;
+    font-weight: 600;
 
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 h2 {
-    color: var(--forest);
+    color: var(--green);
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(42px,5vw,70px);
+    font-size: clamp(42px, 6vw, 70px);
 
-    line-height: .98;
+    line-height: 1;
 
     font-weight: 500;
-
-    letter-spacing: -1.5px;
 }
 
 
@@ -329,223 +263,102 @@ h2 {
 ========================= */
 
 .intro {
-    padding: 150px 5vw;
+    background: var(--cream);
 }
 
 .intro-grid {
     display: grid;
-    grid-template-columns: .85fr 1.15fr;
 
-    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
 
     align-items: center;
 }
 
 .intro-text p {
-    margin-top: 28px;
+    margin-top: 24px;
 
-    color: var(--muted);
-
-    font-size: 16px;
+    color: var(--grey);
 
     line-height: 1.8;
+
+    font-size: 15px;
 }
 
 .intro-image {
-    position: relative;
-
-    height: 620px;
-
-    overflow: hidden;
+    height: 600px;
 }
 
 .intro-image img {
     height: 100%;
 }
 
-.image-caption {
-    position: absolute;
-
-    bottom: 20px;
-    left: 20px;
-
-    padding: 10px 14px;
-
-    background: rgba(16,44,37,.85);
-
-    color: white;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
 
 /* =========================
-   MARQUEE
+   SERVIZI
 ========================= */
 
-.marquee {
-    overflow: hidden;
-
-    padding: 24px 0;
-
-    background: var(--forest);
+.services {
+    background: var(--green);
 
     color: white;
 }
 
-.marquee-track {
-    width: max-content;
-
-    display: flex;
-
-    gap: 55px;
-
-    animation: marquee 25s linear infinite;
+.services h2 {
+    color: white;
 }
 
-.marquee span {
-    display: flex;
-    align-items: center;
+.services-intro {
+    max-width: 570px;
 
-    gap: 55px;
+    margin-top: 20px;
 
-    font-family: "Playfair Display", serif;
+    color: rgba(255,255,255,.65);
 
-    font-size: 23px;
-
-    white-space: nowrap;
+    line-height: 1.8;
 }
 
-.marquee span::after {
-    content: "✦";
-
-    color: var(--accent);
-
-    font-family: sans-serif;
-
-    font-size: 12px;
-}
-
-@keyframes marquee {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-
-}
-
-
-/* =========================
-   ESPERIENZA
-========================= */
-
-.experience {
-    padding: 150px 5vw;
-
-    background: var(--sand);
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    gap: 50px;
-
-    margin-bottom: 65px;
-}
-
-.experience-header p {
-    max-width: 390px;
-
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-.experience-grid {
+.service-grid {
     display: grid;
 
-    grid-template-columns:
-        1.15fr
-        .85fr
-        .85fr;
+    grid-template-columns: repeat(3,1fr);
 
     gap: 18px;
+
+    margin-top: 60px;
 }
 
-.experience-card {
-    position: relative;
+.service-card {
+    padding: 35px;
 
-    height: 560px;
+    background: var(--green-light);
 
-    overflow: hidden;
-
-    color: white;
+    min-height: 300px;
 }
 
-.experience-card img {
-    height: 100%;
+.service-card img {
+    height: 155px;
 
-    transition: transform .7s cubic-bezier(.2,.7,.2,1);
+    margin-bottom: 25px;
 }
 
-.experience-card:hover img {
-    transform: scale(1.045);
-}
-
-.experience-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    padding: 32px;
-
-    background:
-        linear-gradient(
-            transparent 40%,
-            rgba(0,0,0,.78)
-        );
-}
-
-.experience-number {
-    margin-bottom: 10px;
-
-    color: var(--accent);
-
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.experience-overlay h3 {
+.service-card h3 {
     font-family: "Playfair Display", serif;
 
-    font-size: 35px;
+    font-size: 28px;
 
     font-weight: 500;
 }
 
-.experience-overlay p {
-    max-width: 330px;
+.service-card p {
+    margin-top: 10px;
 
-    margin-top: 8px;
-
-    color: rgba(255,255,255,.76);
+    color: rgba(255,255,255,.65);
 
     font-size: 13px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
@@ -554,65 +367,59 @@ h2 {
 ========================= */
 
 .chiosco {
-    padding: 150px 5vw;
-
-    background: var(--cream);
+    background: var(--sand);
 }
 
 .chiosco-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr .85fr;
 
-    gap: 100px;
+    gap: 90px;
 
     align-items: center;
 }
 
-.chiosco-photo {
-    height: 670px;
-
-    overflow: hidden;
+.chiosco-image {
+    height: 620px;
 }
 
-.chiosco-photo img {
+.chiosco-image img {
     height: 100%;
 }
 
-.chiosco-copy p {
-    max-width: 560px;
+.chiosco-text p {
+    margin-top: 24px;
 
-    margin-top: 28px;
-
-    color: var(--muted);
-
-    font-size: 16px;
+    color: var(--grey);
 
     line-height: 1.8;
 }
 
-.services {
-    margin-top: 40px;
+.info-list {
+    margin-top: 35px;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(24,60,50,.18);
 }
 
-.service {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.info {
+    padding: 17px 0;
 
-    padding: 18px 0;
+    border-bottom: 1px solid rgba(24,60,50,.18);
+}
 
-    border-bottom: 1px solid var(--line);
+.info strong {
+    display: block;
 
-    color: var(--forest);
+    color: var(--green);
 
     font-size: 14px;
 }
 
-.service span {
-    color: var(--muted);
+.info span {
+    color: var(--grey);
+
+    font-size: 13px;
 }
 
 
@@ -620,61 +427,59 @@ h2 {
    ATTIVITÀ
 ========================= */
 
-.today {
-    padding: 150px 5vw;
-
-    background: var(--forest);
-
-    color: white;
+.activities {
+    background: white;
 }
 
-.today-grid {
-    display: grid;
+.activities-header {
+    display: flex;
 
-    grid-template-columns: .8fr 1.2fr;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    gap: 100px;
+    gap: 40px;
 }
 
-.today h2 {
-    color: white;
-}
+.activities-header p {
+    max-width: 400px;
 
-.today-intro {
-    margin-top: 25px;
+    color: var(--grey);
 
-    color: rgba(255,255,255,.65);
-
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 .activity-list {
-    border-top: 1px solid rgba(255,255,255,.18);
+    margin-top: 60px;
+
+    border-top: 1px solid rgba(24,60,50,.15);
 }
 
 .activity {
     display: grid;
 
-    grid-template-columns: 70px 1fr;
+    grid-template-columns: 80px 1fr auto;
 
-    gap: 25px;
+    align-items: center;
 
-    padding: 22px 0;
+    gap: 20px;
 
-    border-bottom: 1px solid rgba(255,255,255,.18);
+    padding: 25px 0;
+
+    border-bottom: 1px solid rgba(24,60,50,.15);
 }
 
 .activity-number {
-    color: var(--accent);
+    color: var(--orange);
 
     font-size: 11px;
-    font-weight: 700;
 }
 
 .activity h3 {
+    color: var(--green);
+
     font-family: "Playfair Display", serif;
 
-    font-size: 25px;
+    font-size: 27px;
 
     font-weight: 500;
 }
@@ -682,9 +487,15 @@ h2 {
 .activity p {
     margin-top: 5px;
 
-    color: rgba(255,255,255,.58);
+    color: var(--grey);
 
     font-size: 13px;
+}
+
+.activity-arrow {
+    color: var(--orange);
+
+    font-size: 22px;
 }
 
 
@@ -693,8 +504,6 @@ h2 {
 ========================= */
 
 .gallery {
-    padding: 150px 5vw;
-
     background: var(--cream);
 }
 
@@ -704,15 +513,14 @@ h2 {
     justify-content: space-between;
     align-items: flex-end;
 
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .gallery-header p {
-    max-width: 360px;
+    max-width: 370px;
 
-    color: var(--muted);
+    color: var(--grey);
 
-    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -721,9 +529,9 @@ h2 {
 
     grid-template-columns: repeat(4,1fr);
 
-    grid-auto-rows: 280px;
+    grid-auto-rows: 250px;
 
-    gap: 12px;
+    gap: 10px;
 }
 
 .gallery-item {
@@ -733,19 +541,19 @@ h2 {
 .gallery-item img {
     height: 100%;
 
-    transition: transform .7s ease;
+    transition: transform .5s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
-.gallery-large {
+.large {
     grid-column: span 2;
     grid-row: span 2;
 }
 
-.gallery-wide {
+.wide {
     grid-column: span 2;
 }
 
@@ -754,68 +562,56 @@ h2 {
    STORIA
 ========================= */
 
-.history {
-    padding: 150px 5vw;
-
-    background: #ebe4d6;
+.story {
+    background: var(--sand);
 }
 
-.history-grid {
+.story-grid {
     display: grid;
 
-    grid-template-columns: .65fr 1.35fr;
+    grid-template-columns: .8fr 1.2fr;
 
     gap: 100px;
 }
 
-.history-year {
-    color: var(--accent);
+.story-year {
+    color: var(--orange);
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(75px,10vw,140px);
+    font-size: 120px;
 
     line-height: .8;
 }
 
-.history-copy p {
-    max-width: 650px;
+.story-text p {
+    margin-top: 25px;
 
-    margin-top: 28px;
-
-    color: var(--muted);
-
-    font-size: 16px;
+    color: var(--grey);
 
     line-height: 1.85;
 }
 
-.history-quote {
-    max-width: 650px;
+.quote {
+    margin-top: 40px;
 
-    margin-top: 45px;
+    padding-left: 22px;
 
-    padding-left: 25px;
+    border-left: 2px solid var(--orange);
 
-    border-left: 2px solid var(--accent);
-
-    color: var(--forest);
+    color: var(--green);
 
     font-family: "Playfair Display", serif;
 
     font-size: 28px;
-
-    line-height: 1.3;
 }
 
 
 /* =========================
-   MAPPA
+   DOVE SIAMO
 ========================= */
 
 .location {
-    padding: 150px 5vw;
-
     background: white;
 }
 
@@ -824,27 +620,26 @@ h2 {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 80px;
+    gap: 70px;
 
-    margin-top: 60px;
+    margin-top: 55px;
 }
 
 .map iframe {
     width: 100%;
-
-    height: 510px;
+    height: 500px;
 
     border: 0;
 }
 
-.location-copy {
+.location-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.location-copy h3 {
-    color: var(--forest);
+.location-text h3 {
+    color: var(--green);
 
     font-family: "Playfair Display", serif;
 
@@ -853,38 +648,38 @@ h2 {
     font-weight: 500;
 }
 
-.location-copy > p {
+.location-text p {
     margin-top: 20px;
 
-    color: var(--muted);
+    color: var(--grey);
 
     line-height: 1.8;
 }
 
-.details {
+.location-info {
     margin-top: 35px;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(24,60,50,.15);
 }
 
-.detail {
+.location-row {
     padding: 17px 0;
 
-    border-bottom: 1px solid var(--line);
-
-    font-size: 14px;
+    border-bottom: 1px solid rgba(24,60,50,.15);
 }
 
-.detail strong {
+.location-row strong {
     display: block;
 
-    margin-bottom: 4px;
+    color: var(--green);
 
-    color: var(--forest);
+    font-size: 13px;
 }
 
-.detail span {
-    color: var(--muted);
+.location-row span {
+    color: var(--grey);
+
+    font-size: 13px;
 }
 
 
@@ -893,54 +688,67 @@ h2 {
 ========================= */
 
 .contact {
-    padding: 130px 5vw;
-
-    background: var(--accent);
+    background: var(--orange);
 
     color: white;
 }
 
-.contact-inner {
-    max-width: 1250px;
+.contact-grid {
+    display: grid;
 
-    margin: auto;
+    grid-template-columns: 1fr 1fr;
 
-    display: flex;
+    gap: 80px;
 
     align-items: center;
-    justify-content: space-between;
-
-    gap: 60px;
 }
 
 .contact h2 {
     color: white;
 }
 
-.contact-text {
-    margin-top: 20px;
+.contact p {
+    max-width: 500px;
 
-    max-width: 560px;
+    margin-top: 20px;
 
     color: rgba(255,255,255,.8);
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .contact-buttons {
     display: flex;
-
     flex-direction: column;
 
-    gap: 10px;
+    gap: 12px;
 }
 
-.contact .button {
-    min-width: 190px;
+.contact-button {
+    padding: 20px 25px;
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    transition: .2s;
 }
 
-.contact .button-primary {
-    background: var(--forest);
+.contact-button:hover {
+    background: white;
+    color: var(--green);
+}
+
+.contact-button strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 13px;
+}
+
+.contact-button span {
+    font-size: 12px;
+
+    opacity: .75;
 }
 
 
@@ -949,15 +757,15 @@ h2 {
 ========================= */
 
 footer {
-    padding: 65px 5vw 30px;
+    padding: 55px 6vw 25px;
 
-    background: var(--forest-dark);
+    background: #102b25;
 
     color: white;
 }
 
 .footer-grid {
-    max-width: 1250px;
+    max-width: 1150px;
 
     margin: auto;
 
@@ -965,23 +773,21 @@ footer {
 
     grid-template-columns: 1.4fr .8fr .8fr;
 
-    gap: 80px;
+    gap: 60px;
 }
 
-.footer-brand {
+.footer-logo {
     font-family: "Playfair Display", serif;
 
-    font-size: 40px;
-
-    line-height: .9;
+    font-size: 38px;
 }
 
 .footer-description {
-    max-width: 360px;
+    max-width: 340px;
 
-    margin-top: 20px;
+    margin-top: 15px;
 
-    color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.5);
 
     font-size: 13px;
 
@@ -989,41 +795,38 @@ footer {
 }
 
 .footer-title {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
-    color: var(--accent);
+    color: var(--orange);
 
     font-size: 10px;
-    font-weight: 700;
 
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+
+    gap: 9px;
 
     color: rgba(255,255,255,.65);
 
     font-size: 13px;
 }
 
-.footer-links a:hover {
-    color: white;
-}
-
 .copyright {
-    max-width: 1250px;
+    max-width: 1150px;
 
-    margin: 60px auto 0;
+    margin: 50px auto 0;
 
     padding-top: 20px;
 
-    border-top: 1px solid rgba(255,255,255,.12);
+    border-top: 1px solid rgba(255,255,255,.1);
 
-    color: rgba(255,255,255,.35);
+    color: rgba(255,255,255,.3);
 
     font-size: 10px;
 }
@@ -1033,61 +836,40 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width:900px) {
+@media(max-width:850px) {
 
-    .nav-links {
+    nav {
         display: none;
-    }
-
-    .hero-content {
-        padding-bottom: 65px;
-    }
-
-    .hero-bottom {
-        align-items: flex-start;
-
-        flex-direction: column;
     }
 
     .intro-grid,
     .chiosco-grid,
-    .today-grid,
-    .history-grid,
-    .location-grid {
+    .story-grid,
+    .location-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
+    }
 
-        gap: 50px;
+    .service-grid {
+        grid-template-columns: 1fr;
     }
 
     .intro-image,
-    .chiosco-photo {
-        height: 480px;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-card {
+    .chiosco-image {
         height: 480px;
     }
 
     .gallery-grid {
         grid-template-columns: repeat(2,1fr);
-
-        grid-auto-rows: 260px;
     }
 
-    .gallery-large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .gallery-wide {
+    .large,
+    .wide {
         grid-column: span 2;
     }
 
-    .contact-inner {
+    .activities-header,
+    .gallery-header {
         align-items: flex-start;
 
         flex-direction: column;
@@ -1096,83 +878,60 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-
 }
 
-@media (max-width:560px) {
+@media(max-width:550px) {
 
-    .nav {
-        height: 68px;
+    section {
+        padding: 90px 6vw;
     }
 
-    .nav-cta {
-        display: none;
-    }
-
-    .brand {
-        font-size: 22px;
+    .hero {
+        padding-bottom: 60px;
     }
 
     .hero h1 {
-        font-size: 59px;
-
-        letter-spacing: -2px;
+        font-size: 58px;
     }
 
-    .hero-actions {
-        width: 100%;
-
+    .hero-buttons {
         flex-direction: column;
     }
 
-    .hero-actions .button {
+    .hero-buttons .button {
         width: 100%;
     }
 
-    .intro,
-    .experience,
-    .chiosco,
-    .today,
-    .gallery,
-    .history,
-    .location {
-        padding-top: 95px;
-
-        padding-bottom: 95px;
-    }
-
-    h2 {
-        font-size: 45px;
-    }
-
-    .experience-header,
-    .gallery-header {
-        align-items: flex-start;
-
-        flex-direction: column;
+    .intro-image,
+    .chiosco-image {
+        height: 400px;
     }
 
     .gallery-grid {
         grid-template-columns: 1fr;
 
-        grid-auto-rows: 330px;
+        grid-auto-rows: 300px;
     }
 
-    .gallery-large,
-    .gallery-wide {
+    .large,
+    .wide {
         grid-column: span 1;
+    }
+
+    .activity {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .activity-arrow {
+        display: none;
+    }
+
+    .story-year {
+        font-size: 85px;
     }
 
     .footer-grid {
         grid-template-columns: 1fr;
-    }
-
-    .contact-buttons {
-        width: 100%;
-    }
-
-    .contact-buttons .button {
-        width: 100%;
     }
 
 }
@@ -1180,94 +939,64 @@ footer {
 </style>
 </head>
 
-
 <body>
 
 
-<header class="nav" id="navbar">
+<header id="header">
 
-    <a href="#top" class="brand">
-        Chiosco Lido
-        <small>Casalecchio di Reno</small>
+    <a href="#home" class="logo">
+        Lido
+        <span>Casalecchio di Reno</span>
     </a>
 
     <nav>
-        <ul class="nav-links">
-
-            <li>
-                <a href="#lido">Il Lido</a>
-            </li>
-
-            <li>
-                <a href="#esperienza">Esperienza</a>
-            </li>
-
-            <li>
-                <a href="#chiosco">Chiosco</a>
-            </li>
-
-            <li>
-                <a href="#attivita">Attività</a>
-            </li>
-
-            <li>
-                <a href="#galleria">Galleria</a>
-            </li>
-
-            <li>
-                <a href="#come-arrivare">Dove siamo</a>
-            </li>
-
-        </ul>
+        <a href="#lido">Il Lido</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#attivita">Attività</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#dove">Dove siamo</a>
     </nav>
 
-    <a href="tel:+393299470710" class="nav-cta">
-        Contattaci
+    <a href="#contatti" class="header-button">
+        Contatti
     </a>
 
 </header>
 
 
-<main id="top">
+<main>
 
 
-<section class="hero">
+<!-- HERO -->
+
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="eyebrow">
+        <div class="hero-small">
             Casalecchio di Reno · Bologna
         </div>
 
         <h1>
-            La spiaggia<br>
-            dei bolognesi.
+            Il Lido.<br>
+            Il tuo posto.
         </h1>
 
-        <div class="hero-bottom">
+        <p>
+            Una spiaggia nel cuore di Casalecchio,
+            sulle rive del Reno. Natura, sport,
+            relax e il Chiosco Lido.
+        </p>
 
-            <p class="hero-description">
-                Un luogo storico sulle rive del Reno.
-                Natura, sport, relax e convivialità
-                a pochi minuti da Bologna.
-            </p>
+        <div class="hero-buttons">
 
-            <div class="hero-actions">
+            <a href="#dove" class="button button-primary">
+                Come arrivare
+            </a>
 
-                <a href="#come-arrivare"
-                   class="button button-primary">
-                    Come arrivare
-                </a>
-
-                <a
-                    href="https://www.facebook.com/chioscolido.casalecchio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button button-secondary">
-                    Facebook
-                </a>
-
-            </div>
+            <a href="#contatti" class="button button-secondary">
+                Contattaci
+            </a>
 
         </div>
 
@@ -1276,9 +1005,11 @@ footer {
 </section>
 
 
+<!-- IL LIDO -->
+
 <section class="intro" id="lido">
 
-    <div class="section intro-grid">
+    <div class="container intro-grid">
 
         <div class="intro-text">
 
@@ -1287,27 +1018,26 @@ footer {
             </div>
 
             <h2>
-                Un'estate<br>
-                diversa dal solito.
+                Una piccola<br>
+                estate in città.
             </h2>
 
             <p>
-                Nel cuore di Casalecchio di Reno,
-                il Lido è un punto d'incontro tra
-                natura, sport e vita all'aria aperta.
+                Il Lido di Casalecchio è uno dei luoghi
+                storici della città: un angolo verde
+                dove trascorrere le giornate all'aperto,
+                a pochi minuti da Bologna.
             </p>
 
             <p>
-                Di fronte al Parco della Chiusa,
-                l'area offre sabbia, lettini,
-                ombrelloni, cabine e spazi dove
-                fermarsi durante tutta la giornata.
+                La spiaggia, gli ombrelloni, il prato,
+                il chiosco e il paesaggio del Reno
+                creano un ambiente informale e rilassato.
             </p>
 
             <p>
-                Il Reno non è balneabile, ma il suo
-                paesaggio è parte integrante
-                dell'esperienza del Lido.
+                Un luogo pensato per fermarsi,
+                incontrarsi e vivere l'estate.
             </p>
 
         </div>
@@ -1319,10 +1049,6 @@ footer {
                 alt="Spiaggia del Lido di Casalecchio di Reno"
             >
 
-            <div class="image-caption">
-                Lido di Casalecchio di Reno
-            </div>
-
         </div>
 
     </div>
@@ -1330,118 +1056,74 @@ footer {
 </section>
 
 
-<div class="marquee">
+<!-- SERVIZI -->
 
-    <div class="marquee-track">
+<section class="services" id="servizi">
 
-        <span>Sabbia</span>
-        <span>Natura</span>
-        <span>Sport</span>
-        <span>Aperitivo</span>
-        <span>Relax</span>
-        <span>Musica</span>
+    <div class="container">
 
-        <span>Sabbia</span>
-        <span>Natura</span>
-        <span>Sport</span>
-        <span>Aperitivo</span>
-        <span>Relax</span>
-        <span>Musica</span>
-
-    </div>
-
-</div>
-
-
-<section class="experience" id="esperienza">
-
-    <div class="section">
-
-        <div class="experience-header">
-
-            <div>
-
-                <div class="label">
-                    L'esperienza
-                </div>
-
-                <h2>
-                    Non solo<br>
-                    una spiaggia.
-                </h2>
-
-            </div>
-
-            <p>
-                Un posto dove arrivare al mattino,
-                fermarsi per pranzo, fare sport,
-                rilassarsi e restare fino all'aperitivo.
-            </p>
-
+        <div class="label">
+            Al Lido trovi
         </div>
 
+        <h2>
+            Tutto quello<br>
+            che serve.
+        </h2>
 
-        <div class="experience-grid">
+        <p class="services-intro">
+            Un'esperienza semplice e completa:
+            dalla spiaggia al chiosco, passando
+            per lo sport e gli spazi verdi.
+        </p>
 
 
-            <article class="experience-card">
+        <div class="service-grid">
+
+
+            <article class="service-card">
 
                 <img
                     src="lido-ombrelloni.jpg"
-                    alt="Ombrelloni e lettini del Lido"
+                    alt="Spiaggia e ombrelloni"
                     loading="lazy"
                 >
 
-                <div class="experience-overlay">
+                <h3>
+                    Spiaggia
+                </h3>
 
-                    <div class="experience-number">
-                        01
-                    </div>
-
-                    <h3>
-                        Spiaggia
-                    </h3>
-
-                    <p>
-                        Sabbia, lettini e ombrelloni
-                        per vivere l'estate senza
-                        lasciare la città.
-                    </p>
-
-                </div>
+                <p>
+                    Ombrelloni, lettini e sabbia
+                    per rilassarsi durante
+                    le giornate estive.
+                </p>
 
             </article>
 
 
-            <article class="experience-card">
+            <article class="service-card">
 
                 <img
                     src="chiosco-esterno.jpg"
-                    alt="Chiosco Lido di Casalecchio"
+                    alt="Chiosco Lido"
                     loading="lazy"
                 >
 
-                <div class="experience-overlay">
+                <h3>
+                    Chiosco
+                </h3>
 
-                    <div class="experience-number">
-                        02
-                    </div>
-
-                    <h3>
-                        Chiosco
-                    </h3>
-
-                    <p>
-                        Colazione, pranzo, drink
-                        e aperitivo.
-                    </p>
-
-                </div>
+                <p>
+                    Un punto di ritrovo per mangiare,
+                    bere qualcosa e fermarsi
+                    fino all'aperitivo.
+                </p>
 
             </article>
 
 
-            <article class="experience-card">
+            <article class="service-card">
 
                 <img
                     src="lido-cabine.jpg"
@@ -1449,22 +1131,15 @@ footer {
                     loading="lazy"
                 >
 
-                <div class="experience-overlay">
+                <h3>
+                    Comfort
+                </h3>
 
-                    <div class="experience-number">
-                        03
-                    </div>
-
-                    <h3>
-                        Atmosfera
-                    </h3>
-
-                    <p>
-                        Il fascino storico del Lido
-                        reinterpretato per oggi.
-                    </p>
-
-                </div>
+                <p>
+                    Spazi e servizi pensati per
+                    vivere il Lido durante
+                    tutta la giornata.
+                </p>
 
             </article>
 
@@ -1475,11 +1150,13 @@ footer {
 </section>
 
 
+<!-- CHIOSCO -->
+
 <section class="chiosco" id="chiosco">
 
-    <div class="section chiosco-grid">
+    <div class="container chiosco-grid">
 
-        <div class="chiosco-photo">
+        <div class="chiosco-image">
 
             <img
                 src="chiosco-sera.jpg"
@@ -1489,53 +1166,50 @@ footer {
 
         </div>
 
-
-        <div class="chiosco-copy">
+        <div class="chiosco-text">
 
             <div class="label">
-                Chiosco Lido
+                Il Chiosco
             </div>
 
             <h2>
                 Si viene<br>
-                anche per restare.
+                anche per mangiare.
             </h2>
 
             <p>
-                Il chiosco è il cuore sociale del Lido:
-                un punto di ritrovo immerso nel verde,
-                pensato per mangiare, bere qualcosa
-                e stare insieme.
+                Il Chiosco Lido è il punto d'incontro
+                della struttura: un luogo informale
+                dove fermarsi durante la giornata.
             </p>
 
             <p>
-                L'offerta comprende proposte per il pranzo,
-                piadine, pizza, insalate, drink e aperitivi,
-                con un'atmosfera informale durante
-                tutta la giornata.
+                Dalla pausa pranzo all'aperitivo,
+                il chiosco accompagna la giornata
+                con food, drink e momenti di socialità.
             </p>
 
 
-            <div class="services">
+            <div class="info-list">
 
-                <div class="service">
+                <div class="info">
                     <strong>Colazione</strong>
-                    <span>Mattina</span>
+                    <span>Per iniziare la giornata al Lido</span>
                 </div>
 
-                <div class="service">
+                <div class="info">
                     <strong>Pranzo</strong>
-                    <span>Tutti i giorni</span>
+                    <span>Una pausa informale all'aperto</span>
                 </div>
 
-                <div class="service">
+                <div class="info">
                     <strong>Aperitivo</strong>
-                    <span>Pomeriggio / sera</span>
+                    <span>Drink e convivialità</span>
                 </div>
 
-                <div class="service">
-                    <strong>Drink</strong>
-                    <span>Fino a sera</span>
+                <div class="info">
+                    <strong>Eventi</strong>
+                    <span>Musica e serate speciali</span>
                 </div>
 
             </div>
@@ -1547,25 +1221,32 @@ footer {
 </section>
 
 
-<section class="today" id="attivita">
+<!-- ATTIVITÀ -->
 
-    <div class="section today-grid">
+<section class="activities" id="attivita">
 
-        <div>
+    <div class="container">
 
-            <div class="label">
-                Il Lido oggi
+        <div class="activities-header">
+
+            <div>
+
+                <div class="label">
+                    Attività
+                </div>
+
+                <h2>
+                    C'è sempre<br>
+                    qualcosa da fare.
+                </h2>
+
             </div>
 
-            <h2>
-                Un luogo<br>
-                da vivere.
-            </h2>
-
-            <p class="today-intro">
-                Sport, relax, natura e socialità:
-                il Lido è pensato per essere vissuto
-                durante tutta la giornata.
+            <p>
+                Sport, movimento, relax ed eventi:
+                il Lido non è soltanto una spiaggia,
+                ma uno spazio da vivere durante
+                tutta la stagione.
             </p>
 
         </div>
@@ -1587,10 +1268,13 @@ footer {
                     </h3>
 
                     <p>
-                        Sport e movimento direttamente
-                        nell'area del Lido.
+                        Sport e divertimento sulla sabbia.
                     </p>
 
+                </div>
+
+                <div class="activity-arrow">
+                    →
                 </div>
 
             </div>
@@ -1609,10 +1293,13 @@ footer {
                     </h3>
 
                     <p>
-                        Attività all'aperto immerse
-                        nel verde.
+                        Attività all'aperto immerse nel verde.
                     </p>
 
+                </div>
+
+                <div class="activity-arrow">
+                    →
                 </div>
 
             </div>
@@ -1631,10 +1318,13 @@ footer {
                     </h3>
 
                     <p>
-                        Attività sportive e allenamento
-                        a cielo aperto.
+                        Movimento e allenamento all'aperto.
                     </p>
 
+                </div>
+
+                <div class="activity-arrow">
+                    →
                 </div>
 
             </div>
@@ -1653,10 +1343,13 @@ footer {
                     </h3>
 
                     <p>
-                        Amache, prato, ombra e
-                        tempo senza programmi.
+                        Prato, ombra, amache e tempo libero.
                     </p>
 
+                </div>
+
+                <div class="activity-arrow">
+                    →
                 </div>
 
             </div>
@@ -1675,13 +1368,17 @@ footer {
                     </h3>
 
                     <p>
-                        Musica, karaoke e occasioni
-                        per stare insieme.
+                        Musica, serate e appuntamenti speciali.
                     </p>
 
                 </div>
 
+                <div class="activity-arrow">
+                    →
+                </div>
+
             </div>
+
 
         </div>
 
@@ -1690,9 +1387,11 @@ footer {
 </section>
 
 
+<!-- GALLERIA -->
+
 <section class="gallery" id="galleria">
 
-    <div class="section">
+    <div class="container">
 
         <div class="gallery-header">
 
@@ -1703,16 +1402,15 @@ footer {
                 </div>
 
                 <h2>
-                    Dentro<br>
+                    Vivi<br>
                     il Lido.
                 </h2>
 
             </div>
 
             <p>
-                La spiaggia, il chiosco, le cabine,
-                il verde e l'atmosfera del Lido
-                raccontati attraverso immagini.
+                La spiaggia, il chiosco, gli eventi
+                e il paesaggio del Reno.
             </p>
 
         </div>
@@ -1721,7 +1419,7 @@ footer {
         <div class="gallery-grid">
 
 
-            <figure class="gallery-item gallery-large">
+            <div class="gallery-item large">
 
                 <img
                     src="aperitivo.jpg"
@@ -1729,43 +1427,10 @@ footer {
                     loading="lazy"
                 >
 
-            </figure>
+            </div>
 
 
-            <figure class="gallery-item">
-
-                <img
-                    src="lido-cabine.jpg"
-                    alt="Cabine del Lido"
-                    loading="lazy"
-                >
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                    src="chiosco-esterno.jpg"
-                    alt="Chiosco del Lido"
-                    loading="lazy"
-                >
-
-            </figure>
-
-
-            <figure class="gallery-item">
-
-                <img
-                    src="lido-ombrelloni.jpg"
-                    alt="Ombrelloni del Lido"
-                    loading="lazy"
-                >
-
-            </figure>
-
-
-            <figure class="gallery-item">
+            <div class="gallery-item">
 
                 <img
                     src="evento.jpg"
@@ -1773,21 +1438,10 @@ footer {
                     loading="lazy"
                 >
 
-            </figure>
+            </div>
 
 
-            <figure class="gallery-item gallery-wide">
-
-                <img
-                    src="beach-volley.jpg"
-                    alt="Beach volley al Lido"
-                    loading="lazy"
-                >
-
-            </figure>
-
-
-            <figure class="gallery-item">
+            <div class="gallery-item">
 
                 <img
                     src="prato.jpg"
@@ -1795,10 +1449,32 @@ footer {
                     loading="lazy"
                 >
 
-            </figure>
+            </div>
 
 
-            <figure class="gallery-item">
+            <div class="gallery-item">
+
+                <img
+                    src="beach-volley.jpg"
+                    alt="Beach volley al Lido"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="lido-cabine.jpg"
+                    alt="Cabine del Lido"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="gallery-item wide">
 
                 <img
                     src="reno.jpg"
@@ -1806,10 +1482,10 @@ footer {
                     loading="lazy"
                 >
 
-            </figure>
+            </div>
 
 
-            <figure class="gallery-item">
+            <div class="gallery-item">
 
                 <img
                     src="dettaglio.jpg"
@@ -1817,7 +1493,18 @@ footer {
                     loading="lazy"
                 >
 
-            </figure>
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img
+                    src="chiosco-esterno.jpg"
+                    alt="Chiosco Lido"
+                    loading="lazy"
+                >
+
+            </div>
 
         </div>
 
@@ -1826,55 +1513,49 @@ footer {
 </section>
 
 
-<section class="history">
+<!-- STORIA -->
 
-    <div class="section history-grid">
+<section class="story">
+
+    <div class="container story-grid">
 
         <div>
 
             <div class="label">
-                Dal Novecento
+                La storia
             </div>
 
-            <div class="history-year">
+            <div class="story-year">
                 1920
             </div>
 
         </div>
 
 
-        <div class="history-copy">
+        <div class="story-text">
 
             <h2>
-                Una storia<br>
-                legata al Reno.
+                Un luogo<br>
+                che appartiene<br>
+                alla città.
             </h2>
 
             <p>
-                Il Lido di Casalecchio nasce come
-                stabilimento balneare già nei primi
-                decenni del Novecento, quando le rive
-                del Reno erano una destinazione estiva
-                per gli abitanti di Bologna e Casalecchio.
+                Il Lido di Casalecchio è legato alla
+                storia del Reno e alla tradizione
+                estiva della città.
             </p>
 
             <p>
-                Nel corso della sua storia ha attraversato
-                periodi di grande popolarità, il declino
-                legato al turismo di massa e la chiusura,
-                fino alla riapertura dopo il restauro
-                del 1998.
+                Nel corso degli anni il Lido è diventato
+                un punto di riferimento per chi cerca
+                natura, socialità e vita all'aperto
+                senza allontanarsi da Bologna.
             </p>
 
-            <p>
-                Oggi il Lido conserva quella stessa
-                idea di luogo di incontro, reinterpretata
-                attraverso sport, natura, food & drink
-                e vita all'aperto.
-            </p>
-
-            <div class="history-quote">
-                La vacanza a pochi minuti da Bologna.
+            <div class="quote">
+                Un pezzo di estate nel cuore
+                di Casalecchio.
             </div>
 
         </div>
@@ -1884,36 +1565,35 @@ footer {
 </section>
 
 
-<section class="location" id="come-arrivare">
+<!-- DOVE SIAMO -->
 
-    <div class="section">
+<section class="location" id="dove">
+
+    <div class="container">
 
         <div class="label">
-            Dove siamo
+            Vieni a trovarci
         </div>
 
         <h2>
-            A pochi minuti<br>
-            da Bologna.
+            Dove siamo.
         </h2>
 
 
         <div class="location-grid">
 
-
             <div class="map">
 
                 <iframe
-                    src="https://www.google.com/maps?q=Chiosco%20Lido%20Casalecchio%20di%20Reno%2C%20Via%20Venezia%201&output=embed"
+                    src="https://www.google.com/maps?q=Chiosco%20Lido%20Casalecchio%20di%20Reno&output=embed"
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Mappa Chiosco Lido Casalecchio di Reno">
+                    title="Mappa Lido Casalecchio di Reno">
                 </iframe>
 
             </div>
 
 
-            <div class="location-copy">
+            <div class="location-text">
 
                 <h3>
                     Il Lido<br>
@@ -1921,64 +1601,48 @@ footer {
                 </h3>
 
                 <p>
-                    Situato a Casalecchio di Reno,
-                    sulle rive del fiume e di fronte
-                    al Parco della Chiusa.
+                    Sulle rive del Reno, nel territorio
+                    di Casalecchio di Reno, a pochi
+                    minuti dal centro di Bologna.
                 </p>
 
 
-                <div class="details">
+                <div class="location-info">
 
-                    <div class="detail">
+                    <div class="location-row">
 
                         <strong>
                             Indirizzo
                         </strong>
 
                         <span>
-                            Via Venezia 1,
-                            40033 Casalecchio di Reno (BO)
+                            Casalecchio di Reno (BO)
                         </span>
 
                     </div>
 
 
-                    <div class="detail">
+                    <div class="location-row">
 
                         <strong>
-                            In bicicletta
+                            Zona
                         </strong>
 
                         <span>
-                            Percorso ciclabile lungo
-                            la Chiusa e il Reno.
+                            Area del Lido e Parco della Chiusa
                         </span>
 
                     </div>
 
 
-                    <div class="detail">
+                    <div class="location-row">
 
                         <strong>
-                            Trasporto pubblico
+                            Come arrivare
                         </strong>
 
                         <span>
-                            Linee autobus 20 e 89.
-                        </span>
-
-                    </div>
-
-
-                    <div class="detail">
-
-                        <strong>
-                            In auto
-                        </strong>
-
-                        <span>
-                            Parcheggi nelle aree vicine
-                            al centro di Casalecchio.
+                            In auto, bicicletta o con i mezzi pubblici
                         </span>
 
                     </div>
@@ -1989,12 +1653,13 @@ footer {
                 <div style="margin-top:30px">
 
                     <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=Chiosco+Lido+Casalecchio+di+Reno,+Via+Venezia+1"
+                        href="https://www.google.com/maps/search/?api=1&query=Chiosco+Lido+Casalecchio+di+Reno"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="button"
-                        style="background:var(--accent);color:white;">
+                        class="button button-primary">
+
                         Apri Google Maps
+
                     </a>
 
                 </div>
@@ -2008,25 +1673,28 @@ footer {
 </section>
 
 
-<section class="contact">
+<!-- CONTATTI -->
 
-    <div class="contact-inner">
+<section class="contact" id="contatti">
+
+    <div class="container contact-grid">
 
         <div>
 
             <div class="label">
-                Chiosco Lido
+                Contatti
             </div>
 
             <h2>
-                Ci vediamo<br>
-                al Lido.
+                Parliamo<br>
+                del Lido.
             </h2>
 
-            <p class="contact-text">
-                Per informazioni, eventi, attività
-                e aggiornamenti sulla stagione,
-                segui i canali ufficiali del Chiosco Lido.
+            <p>
+                Per informazioni sulla struttura,
+                attività, eventi e iniziative,
+                puoi contattare direttamente
+                il Chiosco Lido.
             </p>
 
         </div>
@@ -2036,22 +1704,48 @@ footer {
 
             <a
                 href="tel:+393299470710"
-                class="button button-primary">
-                Chiama il Lido
+                class="contact-button">
+
+                <strong>
+                    Telefono
+                </strong>
+
+                <span>
+                    +39 329 947 0710
+                </span>
+
             </a>
+
 
             <a
                 href="mailto:info@chioscolidocasalecchio.it"
-                class="button button-secondary">
-                Scrivi una email
+                class="contact-button">
+
+                <strong>
+                    Email
+                </strong>
+
+                <span>
+                    info@chioscolidocasalecchio.it
+                </span>
+
             </a>
+
 
             <a
                 href="https://www.facebook.com/chioscolido.casalecchio"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="button button-secondary">
-                Facebook
+                class="contact-button">
+
+                <strong>
+                    Facebook
+                </strong>
+
+                <span>
+                    Visita la pagina Facebook
+                </span>
+
             </a>
 
         </div>
@@ -2064,23 +1758,23 @@ footer {
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <div class="footer-grid">
 
-
         <div>
 
-            <div class="footer-brand">
-                Chiosco<br>
-                Lido.
+            <div class="footer-logo">
+                Lido
             </div>
 
             <p class="footer-description">
                 Casalecchio di Reno · Bologna
                 <br>
-                Natura, sport, food & drink
-                sulle rive del Reno.
+                Spiaggia, natura, sport,
+                food & drink sulle rive del Reno.
             </p>
 
         </div>
@@ -2089,7 +1783,7 @@ footer {
         <div>
 
             <div class="footer-title">
-                Navigazione
+                Esplora
             </div>
 
             <div class="footer-links">
@@ -2098,12 +1792,8 @@ footer {
                     Il Lido
                 </a>
 
-                <a href="#esperienza">
-                    Esperienza
-                </a>
-
-                <a href="#chiosco">
-                    Chiosco
+                <a href="#servizi">
+                    Servizi
                 </a>
 
                 <a href="#attivita">
@@ -2114,7 +1804,7 @@ footer {
                     Galleria
                 </a>
 
-                <a href="#come-arrivare">
+                <a href="#dove">
                     Dove siamo
                 </a>
 
@@ -2136,14 +1826,16 @@ footer {
                 </a>
 
                 <a href="mailto:info@chioscolidocasalecchio.it">
-                    info@chioscolidocasalecchio.it
+                    Email
                 </a>
 
                 <a
                     href="https://www.facebook.com/chioscolido.casalecchio"
                     target="_blank"
                     rel="noopener noreferrer">
+
                     Facebook
+
                 </a>
 
             </div>
@@ -2154,7 +1846,7 @@ footer {
 
 
     <div class="copyright">
-        © 2026 Chiosco Lido Casalecchio di Reno
+        © 2026 Lido di Casalecchio di Reno
     </div>
 
 </footer>
@@ -2162,14 +1854,14 @@ footer {
 
 <script>
 
-const navbar = document.getElementById("navbar");
+const header = document.getElementById("header");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", function() {
 
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
+    if (window.scrollY > 40) {
+        header.classList.add("scrolled");
     } else {
-        navbar.classList.remove("scrolled");
+        header.classList.remove("scrolled");
     }
 
 });
