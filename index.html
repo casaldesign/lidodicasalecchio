@@ -96,19 +96,63 @@ header.scrolled {
     text-transform: uppercase;
 }
 
-nav {
+
+/* =========================
+   NAVIGAZIONE A LINEE
+========================= */
+
+.top-navigation {
     display: flex;
-    gap: 30px;
-
-    font-size: 13px;
+    align-items: flex-start;
+    gap: 18px;
 }
 
-nav a {
-    opacity: .9;
+.top-navigation a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    color: white;
+
+    opacity: .65;
+
+    transition: opacity .25s ease;
 }
 
-nav a:hover {
+.top-navigation a:hover {
     opacity: 1;
+}
+
+.top-navigation small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+}
+
+.nav-line {
+    display: block;
+
+    width: 38px;
+    height: 2px;
+
+    background: rgba(255,255,255,.55);
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+}
+
+.top-navigation a:hover .nav-line {
+    width: 52px;
+
+    background: var(--orange);
 }
 
 .header-button {
@@ -817,6 +861,10 @@ footer {
     font-size: 13px;
 }
 
+.footer-links a:hover {
+    color: white;
+}
+
 .copyright {
     max-width: 1150px;
 
@@ -838,7 +886,7 @@ footer {
 
 @media(max-width:850px) {
 
-    nav {
+    .top-navigation {
         display: none;
     }
 
@@ -939,6 +987,7 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 
@@ -949,13 +998,41 @@ footer {
         <span>Casalecchio di Reno</span>
     </a>
 
-    <nav>
-        <a href="#lido">Il Lido</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#attivita">Attività</a>
-        <a href="#galleria">Galleria</a>
-        <a href="#dove">Dove siamo</a>
+
+    <nav class="top-navigation">
+
+        <a href="#lido">
+            <span class="nav-line"></span>
+            <small>IL LIDO</small>
+        </a>
+
+        <a href="#servizi">
+            <span class="nav-line"></span>
+            <small>SERVIZI</small>
+        </a>
+
+        <a href="#attivita">
+            <span class="nav-line"></span>
+            <small>ATTIVITÀ</small>
+        </a>
+
+        <a href="#galleria">
+            <span class="nav-line"></span>
+            <small>GALLERIA</small>
+        </a>
+
+        <a href="#dove">
+            <span class="nav-line"></span>
+            <small>DOVE SIAMO</small>
+        </a>
+
+        <a href="#contatti">
+            <span class="nav-line"></span>
+            <small>CONTATTI</small>
+        </a>
+
     </nav>
+
 
     <a href="#contatti" class="header-button">
         Contatti
@@ -1041,6 +1118,7 @@ footer {
             </p>
 
         </div>
+
 
         <div class="intro-image">
 
@@ -1165,6 +1243,7 @@ footer {
             >
 
         </div>
+
 
         <div class="chiosco-text">
 
